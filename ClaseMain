@@ -1,0 +1,48 @@
+
+package parcial1;
+
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
+
+public class PARCIAL1 {
+
+    public static void main(String[] args) {
+       Autor autor1 = new Autor("Valnetin Ibach", "Argentino", LocalDate.of(1995, 2, 1));
+        Autor autor2 = new Autor("Marcos Cespedes", "Peruano", LocalDate.of(1997, 7, 29));
+
+        Direccion dir = new Direccion("Adolfo calle", 123, "Guaymallen", "2345");
+        Editorial editorial = new Editorial("Editorial Ganem", "www.ediGanem.com", 5550);
+
+        Genero genero = new Genero("Fantasia", "Literatura latinoamericana");
+
+        Libro libro = new Libro("Psicologia en 1 minuto", 2023, genero, "ISBN1234", List.of(autor1, autor2), editorial);
+        Ejemplar ej1 = new Ejemplar("EL1", EstadoEjemplar.DISPONIBLE, libro);
+        Ejemplar ej2 = new Ejemplar("EL2", EstadoEjemplar.PRESTADO, libro);
+        libro.ejemplares.add(ej1);
+        libro.ejemplares.add(ej2);
+
+        Revista revista = new Revista("Fenomenos Paranormales", 2024, genero, 25, 8);
+        Ejemplar ejRev = new Ejemplar("ER1", EstadoEjemplar.DISPONIBLE, revista);
+        revista.ejemplares.add(ejRev);
+
+        Biblioteca biblioteca = new Biblioteca();
+        biblioteca.registrarPublicacion(libro);
+        biblioteca.registrarPublicacion(revista);
+
+        Usuario usuario = new Usuario("Juan", "Pérez", "12345678");
+        Prestamo prestamo = new Prestamo(new Date(), null);
+        prestamo.agregarLineaPrestamo(ej1);
+        usuario.agregarPrestamo(prestamo);
+        biblioteca.registrarUsuario(usuario);
+
+        // Mostrar historial
+        usuario.mostrarHistorialPrestamos();
+    }
+}
+enum EstadoEjemplar{
+    DISPONIBLE,
+    PRESTADO,
+    RETRASADO,
+    EXTRAVIADO
+   }
