@@ -1,0 +1,16 @@
+
+package parcial1;
+
+import java.util.ArrayList;
+
+public class Publicacion {
+    String titulo;
+    int anio;
+    Genero genero;
+    
+    private ArrayList<Ejemplar> ejemplares;
+    
+    public ArrayList<Ejemplar> getEjemplaresDisponible(){
+        return null;
+    }
+}
