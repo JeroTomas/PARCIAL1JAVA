@@ -1,0 +1,18 @@
+
+package parcial1;
+
+import java.util.ArrayList;
+
+public class Biblioteca {
+    private ArrayList<Publicacion> publicaciones = new ArrayList<>();
+    private ArrayList<Usuario> usuarios = new ArrayList<>();
+
+    public void registrarPublicacion(Publicacion p) {
+        publicaciones.add(p);
+    }
+
+    public void registrarUsuario(Usuario u) {
+        usuarios.add(u);
+    }
+}
+
