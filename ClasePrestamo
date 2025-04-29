@@ -1,0 +1,39 @@
+
+package parcial1;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+
+public class Prestamo {
+    Date fechaPrestamo;
+    Date fechaDevolucion;
+    ArrayList<LineaPrestamo> lineas = new ArrayList<>();
+
+    public Prestamo(Date fechaPrestamo, Date fechaDevolucion) {
+        this.fechaPrestamo = fechaPrestamo;
+        this.fechaDevolucion = fechaDevolucion;
+    }
+
+    public void agregarLineaPrestamo(Ejemplar ejemplar) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(fechaPrestamo);
+        cal.add(Calendar.DATE, 21);
+        Date estimada = cal.getTime();
+
+        lineas.add(new LineaPrestamo(estimada, ejemplar));
+        ejemplar.estado = EstadoEjemplar.PRESTADO;
+    }
+
+    public ArrayList<LineaPrestamo> getLineas() {
+        return lineas;
+    }
+
+    public Date getFechaPrestamo() {
+        return fechaPrestamo;
+    }
+
+    public Date getFechaDevolucion() {
+        return fechaDevolucion;
+    }
+}
