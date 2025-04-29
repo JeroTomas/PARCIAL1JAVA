@@ -1,0 +1,19 @@
+
+
+package parcial1;
+
+public class Direccion {
+    private String calle;
+    private int numero;
+    private String ciudad;
+    private int codigoPostal;
+
+    public Direccion(String calle, int numero, String ciudad, int codigoPostal) {
+        this.calle = calle;
+        this.numero = numero;
+        this.ciudad = ciudad;
+        this.codigoPostal = codigoPostal;
+    }
+    
+    
+}
