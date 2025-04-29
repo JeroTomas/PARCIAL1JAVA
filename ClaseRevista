@@ -1,0 +1,15 @@
+
+package parcial1;
+
+public class Revista extends Publicacion {
+    int volumen;
+    int numero;
+
+    public Revista(String titulo, int anio, Genero genero, int volumen, int numero) {
+        this.titulo = titulo;
+        this.anio = anio;
+        this.genero = genero;
+        this.volumen = volumen;
+        this.numero = numero;
+    }
+}
