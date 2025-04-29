@@ -1,0 +1,21 @@
+
+package parcial1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Libro {
+String isbn;
+    private ArrayList<Autor> autores;
+    Editorial editorial;
+
+    public Libro(String titulo, int anio, Genero genero, String isbn, List<Autor> autores, Editorial editorial) {
+        this.titulo = titulo;
+        this.anio = anio;
+        this.genero = genero;
+        this.isbn = isbn;
+        this.autores = (ArrayList<Autor>) autores;
+        this.editorial = editorial;
+    }
+}
+
