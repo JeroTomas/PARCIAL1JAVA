@@ -1,0 +1,15 @@
+
+package parcial1;
+
+import java.util.Date;
+
+public class LineaPrestamo {
+    Date fechaDevolucionEstimada;
+    Ejemplar ejemplar;
+
+    public LineaPrestamo(Date fechaDevolucionEstimada, Ejemplar ejemplar) {
+        this.fechaDevolucionEstimada = fechaDevolucionEstimada;
+        this.ejemplar = ejemplar;
+    }
+}
+
