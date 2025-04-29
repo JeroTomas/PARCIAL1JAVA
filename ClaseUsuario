@@ -1,0 +1,30 @@
+
+package parcial1;
+
+import java.util.ArrayList;
+
+public class Usuario {
+    String nombre;
+    String apellido;
+    String dni;
+    private ArrayList<Prestamo> prestamos = new ArrayList<>();
+
+    public Usuario(String nombre, String apellido, String dni) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+    }
+
+    public void agregarPrestamo(Prestamo prestamo) {
+        prestamos.add(prestamo);
+    }
+
+    public void mostrarHistorialPrestamos() {
+        for (Prestamo p : prestamos) {
+            System.out.println("Préstamo: " + p.getFechaPrestamo());
+            for (LineaPrestamo lp : p.getLineas()) {
+                System.out.println("  Ejemplar: " + lp.ejemplar.getCodigo() + ", Devolución estimada: " + lp.fechaDevolucionEstimada);
+            }
+        }
+    }
+}
